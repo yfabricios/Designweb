@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+header, footer{
+    background-color: brown;
+    text-align: center;
+    padding: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+nav ol{
+    display: flex;
+    justify-content: center;
+
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+nav a{
+    background-color: rgb(235, 134, 134);
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem;
+    display: inline-block;
+    /* A marcação de âncora possui o comportamento "inline", 
+    o que significa que o padding e o width não funcionam corretamente 
+    de forma nativa. Por isso, é necessário definir 
+    a propriedade display: inline-block. Ela ativa 
+    um comportamento híbrido: mantém o elemento inline (um ao lado do outro) 
+    e, ao mesmo tempo, em bloco (permitindo o ajuste correto de width e padding). 
+    A estratégia de aplicar essa formatação na âncora serve para melhorar a USABILIDADE, 
+    tornando toda a área do botão clicável para o usuário. */
+}
+
+nav li{
+    list-style-type: none;
+
+}
+
+nav li a:hover{
+    background-color: black;
+}
+
+main{
+    max-width: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+section{
+    width: 30rem;
+    border: 1px solid black; /* espessura, estilo e cor */
+    padding: 1rem;
+    margin: 1rem;
+}
