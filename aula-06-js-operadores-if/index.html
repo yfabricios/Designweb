@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+</head>
+<body>
+    <script>
+        // alert('janela');
+        // window.confirm('pergunta com true ou false');
+        // window.prompt('pergunta subjetiva')
+
+        document.write('possibilidade de escrever no html -- não é elegante')
+        // pode-se colocar o conteudo usando getElementById (por exemplo)
+
+        // Operadores aritmeticos
+        console.log(54+98); //é uma estrategia escondida para fazer testes - deve ser acessado usando a aba 'console' do inspecionar do navegador
+        console.log(87-98);
+        console.log(2*89);
+        console.log(63/9);
+
+        let a = 8;
+        console.log('comando: a++'); // Incrementar a+=1
+        console.log(a++); // incrementa DEPOIS de escrever
+
+        console.log("valor: 'a'"); //posso usar aspas simples na dupla e virce-versa
+        console.log(a);
+
+        console.log('comando: ++a');
+        console.log(++a); //incrementa ANTES de escrever
+
+        console.log(a);
+
+        console.log(--a); //mesma coisa do ++
+        console.log(a--); //mesma coisa do ++
+
+        // OPERADORES RELACIONAIS
+
+        console.log(4==6);
+        console.log(4!=9);
+        console.log(9>=7);
+        console.log(6<6);
+        console.log(4==7 && 8==9); // ambas verdadeiras - retorna V. Python "and"
+        console.log(4==8 || 0==0); // se alguma verdadeira - retorna V. Python "or"
+
+        console.log(4==='8'); // se identicos, INCLUSIVE NO TIPO
+        console.log(4=='8'); // 
+    </script>
+    <h2>ESTRUTURA CONDICIONAL</h2>
+    <script>
+        let lanche = 'bolo';
+        if(lanche == 'bolo'){
+            console.log('Opa! bolo!')
+        }
+        else{
+            console.log('Hoje não é bolo... :')
+        }
+        // IF aninhado
+        // se só houver uma linha, não precisa das chaves.
+
+        if(lanche == 'cuscuz'){
+            console.log('CUSCUZ HOJE!')
+        }
+        else
+            if(lanche == "bolacha"){
+                console.log('bolacha!')
+            }
+        // switch
+        let opcao = 3;
+        switch(opcao){
+            case 1: console.log('O valor é 1'); break;
+            case 2: console.log('O valor é 2'); break;
+            case 3: console.log('O valor é 3'); break;
+            default: console.log('DEFAULT');
+        }
+        let esporte = 'futebol';
+        switch(esporte){
+            case 'basquete': {
+                console.log('O valor é basquete'); break;
+                // break é ára parar o switch, ele não ira analisar as outras opções caso hajam várias linhas, deve ter chaves
+            }
+            case 'futebol': console.log('O valor é futebol'); break;
+            case 'handebol': console.log('O valor é handebol'); break;
+            default: console.log('DEFAULT');
+        }
+    </script>
+    <button id="incrementar">INCREMENTAR</button>
+    <!-- a marcação é similar ao inpur do tipo submit, mas o submit é com a marcação do form o button é mais para interatividade com javascript -->
+
+    <span id="resultado">0</span>
+    <!-- span é uma marcação SEM VALOR SEMANTICO, mas do tipo INLINE -->
+
+
+    <script>
+        const incrementar = document.getElementById('incrementar');
+        // const é uma possibilidade de criação de variavel que não ira mudar o valor
+        incrementar.addEventListener('click', function(e){
+            // addEventListener é chamado ao clicar no botão 'incrementar'
+            // alert('clicou!')
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = parseInt(resultado.textContent) +1; // innerHTML é um método para inserir html ou texto
+            // parseInt converte para inteiro
+        })
+    </script>
+
+
+<!-- fazer o decrementar em casa -->
+
+
+
+</body>
+</html>
