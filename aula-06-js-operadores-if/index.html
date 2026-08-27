@@ -86,6 +86,8 @@
         }
     </script>
     <button id="incrementar">INCREMENTAR</button>
+    <button id="decrementar">DECREMENTAR</button>
+
     <!-- a marcação é similar ao inpur do tipo submit, mas o submit é com a marcação do form o button é mais para interatividade com javascript -->
 
     <span id="resultado">0</span>
@@ -100,6 +102,15 @@
             // alert('clicou!')
             let resultado = document.getElementById('resultado');
             resultado.innerHTML = parseInt(resultado.textContent) +1; // innerHTML é um método para inserir html ou texto
+            // parseInt converte para inteiro
+        })
+        const decrementar = document.getElementById('decrementar');
+        // const é uma possibilidade de criação de variavel que não ira mudar o valor
+        decrementar.addEventListener('click', function(e){
+            // addEventListener é chamado ao clicar no botão 'incrementar'
+            // alert('clicou!')
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = parseInt(resultado.textContent) -1; // innerHTML é um método para inserir html ou texto
             // parseInt converte para inteiro
         })
     </script>
