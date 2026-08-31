@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+</head>
+
+<body>
+    <h1>ARRAYS e MATH</h1>
+    <h2>Arrays</h2>
+
+    <script>
+        // Arrays é uma lista de itens
+        // Criação
+
+        const nums = [4,7,8,9]
+        const Alunos = ["José", "Arthur", "Issabbella", "Isadora", "Raquel", "Alisson", "Emanuel"]
+
+        const frutas = [];
+        frutas[0] = "Mamão";
+        frutas[1] = "Goiaba";
+        const lanche = new Array('Biscoito', 'Bolo', 'Macarrão');
+
+    </script>
+
+    <p id="resultado"></p>
+
+    <script>
+        let resultado = document.getElementById('resultado');
+
+        // acessar um vlaor passando um índice 
+        resultado.innerHTML = Alunos[5];
+
+        // imprimir a lista em formato de texto
+        resultado.innerHTML = Alunos.toString();
+
+        // gera uma lista em formato JSON
+        resultado.innerHTML = JSON.stringify(Alunos);
+
+        // numero total de itens da lista
+        resultado.innerHTML = Alunos.length;
+
+        // retorna o penultimo numero
+        resultado.innerHTML = Alunos[Alunos.length-1];
+
+        // ordenação - em ordem alfabetica
+        resultado.innerHTML = Alunos.sort();
+
+        // adicionar valores
+        resultado.innerHTML = Alunos.push('Isis') //retorna o comprimento: push
+        resultado.innerHTML = Alunos.toString()
+
+        // remover: pop
+        resultado.innerHTML = Alunos.pop() //retorna o valor do item removido
+        resultado.innerHTML = Alunos.toString()
+
+        // separador para os itens
+        resultado.innerHTML = Alunos.join(' - ') //retorna o comprimento: push
+    </script>
+
+    <h2>MATH</h2>
+    <p id="resultado2"></p>
+    <script>
+        let resultado2 = document.getElementById('resultado2')
+        // arredonda para o mais proximo
+        resultado2.innerHTML = "Arredonda o valor 'round': "+Math.round(5.3)
+        //.ceil(5.4) - arredonda para cima
+        //.floor(5.7) - arredonda para baixo
+
+        resultado2.innerHTML = Math.min(4,8,7,5,6,3,2) //menor valor
+        resultado2.innerHTML = Math.max(4,8,7,5,6,3,2) //maior valor
+
+        // numero randomico
+        resultado2.innerHTML = Math.random()
+
+        // numero inteiro entre 0 e 10
+         resultado2.innerHTML = Math.floor(Math.random()*10)
+    </script>
+
+    <label>
+        Nome: <input type="text" id="nome"> <br>
+        <button id="gerar">GERAR</button>
+        <p id="textoformatado"></p>
+    </label>
+    <script>
+        let gerar = document.querySelector('#gerar')
+        // querySelector é similar ao getElementById, a diferença é que aceita marcações com 'class', se tiver class usar: ".valorclass"
+        gerar.addEventListener("click", function (e){
+            let nome = document.querySelector('#nome').value;
+            // criar uma lista com cores e colocar o nome com uma cor da lista de forma aleatoria
+            const cores = ["blue", "yellow", "brown", "red", "violet", "purple"]
+        
+            document.querySelector("#textoformatado").style.color = cores[Math.floor(Math.random()*6)];
+            document.querySelector('#textoformatado').innerHTML = nome;
+        })
+    </script>
+
+<!-- jdfklasjsjsjsjsjsjdflskaçdfjsklafjskldafjskldajfskdaf -->
+
+</body>
+</html>
