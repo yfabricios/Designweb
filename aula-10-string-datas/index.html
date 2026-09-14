@@ -67,7 +67,6 @@
             let seg = segundos
             for(let i=0; i<=seg.length; i++){
                 document.getElementById('segundos').innerHTML += 
-
                 '<span style=font-size:'+(i+1)+'rem>' +
                 seg.getSeconds(i)+
                 '</span>'
@@ -75,6 +74,20 @@
         setInterval(segundos,1000)
         // setInterval é uma função de timer, o 1 parametro recebe o nome da função (sem parenteses) e o 2 parametro recebe o tempo em milissegundos
 
+        function aumentando(){
+            const agora = new Date()
+            const seg = agora.getSeconds()
+
+            document.getElementById('segundos').innerHTML = ''
+
+            for (let i = 1; i <= seg; i++){
+                document.getElementById('segundos').innerHTML =
+                    '<span style="font-size:' + i + 'rem">' + i + '</span>'
+            }
+        }
+        setInterval(aumentando, 1000)
+
+        
     </script>
 
 </body>
