@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    <h2>Atividade para a Semana sem Aula</h2>
+
+    <!-- Listar os numeros de -10 a 10 -->
+    <script>
+        for(let i=-10; i<11; i++){
+            console.log(i)
+        }
+    </script>
+
+    <!-- Fazer um array com nomes de cores (7) e imprimir o seu nome (7 vezes) com as cores que estão no array -->
+    <label>
+        Nome: <input type="text" id="nome"> <br>
+        <button id="gerar">GERAR</button>
+        <p id="cores"></p>
+    </label>
+    <script>
+        let gerar = document.querySelector('#gerar')
+        gerar.addEventListener("click", function (e){
+            let nome = document.querySelector('#nome').value
+            const numeros = ['blue', 'yellow', 'pink', 'violet', 'red', 'brown', 'green']
+
+            document.querySelector('#cores').style.color = numeros[Math.floor(Math.random()*7)]
+            document.querySelector('#cores').innerHTML = nome
+        })
+
+        // let gerar = document.querySelector('#gerar')
+        // gerar.addEventListener("click", function (e){
+        //     let nome = document.querySelector('#nome').value
+        //     const numeros = ['blue', 'yellow', 'pink', 'violet', 'red', 'brown', 'green']
+
+        //     let resultado = ""
+
+        //     numeros.forEach(cor =>{
+        //     resultado += `<p style="color: ${cor}; margin: 4px 0;">${nome}</p>`
+        //     })
+
+        //     document.querySelector('#cores').innerHTML = resultado
+        // })
+
+    </script>
+
+
+</body>
+</html>
+
+
