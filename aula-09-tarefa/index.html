@@ -8,14 +8,14 @@
 <body>
     <h2>Atividade para a Semana sem Aula</h2>
 
-    <!-- Listar os numeros de -10 a 10 -->
+    <!-- 1. Listar os numeros de -10 a 10 -->
     <script>
         for(let i=-10; i<11; i++){
             console.log(i)
         }
     </script>
 
-    <!-- Fazer um array com nomes de cores (7) e imprimir o seu nome (7 vezes) com as cores que estão no array -->
+    <!-- 2. Fazer um array com nomes de cores (7) e imprimir o seu nome (7 vezes) com as cores que estão no array -->
     <label>
         Nome: <input type="text" id="nome"> <br>
         <button id="gerar">GERAR</button>
@@ -44,10 +44,88 @@
 
         //     document.querySelector('#cores').innerHTML = resultado
         // })
-
     </script>
 
+    <!-- 3. Imprimir os números de 1 a 5 com tamanhos de texto diferentes -->
+    <h2>textos com tamanho diferentes</h2>
+    <p id="texto"></p>
 
+    <script>
+        const texto = document.getElementById('texto')
+        for(i=1; i<=5; i++){
+            texto.innerHTML += `<span style='font-size:${i}rem'>${i}</span>`
+        }
+    </script>
+
+    <!-- 4. Fazer um formulário pedindo um nome e ao clicar no botão mostrar esse nome impresso 5 vezes, onde cada vez terá um tamanho de 1rem até 5rem-->
+
+    <label>
+        Nick: <input type="text" id="nick">
+        <button id="clicar">CLICAR</button>
+        <p id="texto_aumentando"></p>
+    </label>
+    <script>
+        
+        let botao = document.getElementById('clicar')
+        let inputnick = document.getElementById('nick')
+        let resultado = document.getElementById('texto_aumentando')
+
+        botao.addEventListener('click', function(){
+            const nick = inputnick.value
+            resultado.innerHTML = ''
+
+            for(i=1; i<=5; i++){
+                resultado.innerHTML += `<span style='font-size:${i}rem'>${nick}</span>`
+            }
+        })
+    </script>
+
+    <!-- 5. Botão de aumentar fonte do texto do body para 2rem e diminuir a fonte do texto para 0.5rem -->
+
+    <label>Nome:</label>
+    <input type="text" id="nickname" placeholder="Digite seu nome">
+    <h2 id="mensagem"></h2>
+
+    <!-- 2. Contador -->
+    <button id="decrementar">-</button>
+    <span id="resultado">0</span>
+    <button id="incrementar">+</button>
+
+    <button id="aumentarFonte">Aumentar Fonte</button>
+    <button id="diminuirFonte">Diminuir Fonte</button>
+
+    <script>
+
+        const inputNome = document.getElementById('nickname');
+        const mensagem = document.getElementById('mensagem');
+
+        inputNome.addEventListener('input', function() {
+            mensagem.textContent = `Olá, ${inputNome.value}!`;
+        });
+
+        const incrementar = document.getElementById('incrementar');
+        const decrementar = document.getElementById('decrementar');
+        const metodos = document.getElementById('metodos');
+
+        incrementar.addEventListener('click', function() {
+            resultado.textContent = parseInt(resultado.textContent) + 1;
+        });
+
+        decrementar.addEventListener('click', function() {
+            resultado.textContent = parseInt(resultado.textContent) - 1;
+        });
+
+        const aumentarFonte = document.getElementById('aumentarFonte');
+        const diminuirFonte = document.getElementById('diminuirFonte');
+
+        aumentarFonte.addEventListener('click', function() {
+            document.body.style.fontSize = '2rem';
+        });
+
+        diminuirFonte.addEventListener('click', function() {
+            document.body.style.fontSize = '0.5rem';
+        });
+    </script>
 </body>
 </html>
 
