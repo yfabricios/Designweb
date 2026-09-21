@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 1</title>
+</head>
+<body>
+
+    <button id="gerar">Gerar Cor</button>
+
+    <script>
+        let gerar = document.getElementById("gerar")
+
+        gerar.addEventListener("click", function (e) {
+
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+            let cor = `rgb(${red}, ${green}, ${blue})`
+
+            document.body.style.backgroundColor = cor
+        })
+    </script>
+
+</body>
+</html>

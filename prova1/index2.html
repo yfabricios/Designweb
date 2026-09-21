@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 2</title>
+</head>
+<body>
+
+    <button id="gerar">Gerar texto da cor</button>
+    <p id="listarcores"></p>
+
+    <script>
+        const cores = []
+        const gerar = document.getElementById("gerar")
+
+        gerar.addEventListener("click", function() {
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+            let cor = `rgb(${red}, ${green}, ${blue})`
+
+            document.body.style.backgroundColor = cor
+            cores[cores.length] = cor
+            document.getElementById("listarcores").innerHTML = cores.toString()
+        })
+    </script>
+
+</body>
+</html>

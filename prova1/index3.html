@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 3</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="gerar">Gerar 20 Cores</button>
+    <p id="quadradinhos"></p>
+
+    <script>
+        const gerar = document.getElementById("gerar")
+
+        gerar.addEventListener("click", function (){
+            const paragrafo = document.getElementById("quadradinhos")
+
+            for (let i = 0; i < 20; i++) {
+                let red = Math.floor(Math.random() * 255)
+                let green = Math.floor(Math.random() * 255)
+                let blue = Math.floor(Math.random() * 255)
+                let cor = `rgb(${red}, ${green}, ${blue})`
+
+                paragrafo.innerHTML += `<span style="background-color: ${cor}"></span>`
+            }
+        })
+    </script>
+
+</body>
+</html>
