@@ -33,7 +33,13 @@ const lancheifrn = createApp({
 
         const novoLancheInput = ref('')
         function novoLanche(){
-            console.log('Entrou na função!'+ novoLancheInput.value)
+            //console.log('Entrou na função!'+ novoLancheInput.value)
+            lanches.value.push({
+                descricao: novoLancheInput.value,
+                ativo: false,
+                imagem: 'bolo.jpg'
+            })
+
         }
 
         return{
