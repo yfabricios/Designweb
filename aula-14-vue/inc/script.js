@@ -31,10 +31,17 @@ const lancheifrn = createApp({
             item.ativo = !item.ativo
         }
 
+        const novoLancheInput = ref('')
+        function novoLanche(){
+            console.log('Entrou na função!'+ novoLancheInput.value)
+        }
+
         return{
             mensagem: ref("Olá, Mundo!!"), //é o getElementById            
             lanches,
-            mudarAtivo
+            mudarAtivo,
+            novoLancheInput,
+            novoLanche
         }
     }
 })
