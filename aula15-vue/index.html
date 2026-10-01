@@ -16,12 +16,15 @@
         </p>
         <ol>
             <li v-for="lanche in lanches" 
-                    class="lanche"      
-        
-            
-            > 
+                    class="lanche"
+                    :class="{selecionado: lanche.ativo}"
+                    @click="mudarAtivo(lanche)"
+                    > 
                 <!-- diretivos são atributos -->
-                {{lanche}} 
+                {{lanche.descricao}} 
+                {{lanche.ativo}} 
+
+                <img :src="'imagens/'+lanche.imagem" width="50" alt="">
             </li>
         </ol>
         </main>
