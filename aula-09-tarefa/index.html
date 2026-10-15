@@ -9,93 +9,96 @@
     <h2>Atividade para a Semana sem Aula</h2>
 
     <!-- 1. Listar os numeros de -10 a 10 -->
+    <h3>1. Números de -10 a 10</h3>
+    <p id="lista-numeros"></p>
     <script>
-        for(let i=-10; i<11; i++){
-            console.log(i)
+        const pNumeros = document.querySelector('#lista-numeros');
+        for(let i = -10; i < 11; i++){
+            pNumeros.innerHTML += i + " ";
+            console.log(i);
         }
     </script>
 
+    <hr>
+
     <!-- 2. Fazer um array com nomes de cores (7) e imprimir o seu nome (7 vezes) com as cores que estão no array -->
+    <h3>2. Nome 7 vezes com 7 cores diferentes</h3>
     <label>
         Nome: <input type="text" id="nome"> <br>
         <button id="gerar">GERAR</button>
-        <p id="cores"></p>
+        <div id="cores"></div>
     </label>
     <script>
-        let gerar = document.querySelector('#gerar')
+        let gerar = document.querySelector('#gerar');
         gerar.addEventListener("click", function (e){
-            let nome = document.querySelector('#nome').value
-            const numeros = ['blue', 'yellow', 'pink', 'violet', 'red', 'brown', 'green']
+            let nome = document.querySelector('#nome').value;
+            const coresArray = ['blue', 'yellow', 'pink', 'violet', 'red', 'brown', 'green'];
+            let resultadoCores = "";
 
-            document.querySelector('#cores').style.color = numeros[Math.floor(Math.random()*7)]
-            document.querySelector('#cores').innerHTML = nome
-        })
+            coresArray.forEach(cor => {
+                resultadoCores += `<p style="color: ${cor}; margin: 4px 0; font-weight: bold;">${nome}</p>`;
+            });
 
-        // let gerar = document.querySelector('#gerar')
-        // gerar.addEventListener("click", function (e){
-        //     let nome = document.querySelector('#nome').value
-        //     const numeros = ['blue', 'yellow', 'pink', 'violet', 'red', 'brown', 'green']
-
-        //     let resultado = ""
-
-        //     numeros.forEach(cor =>{
-        //     resultado += `<p style="color: ${cor}; margin: 4px 0;">${nome}</p>`
-        //     })
-
-        //     document.querySelector('#cores').innerHTML = resultado
-        // })
+            document.querySelector('#cores').innerHTML = resultadoCores;
+        });
     </script>
 
-    <!-- 3. Imprimir os números de 1 a 5 com tamanhos de texto diferentes -->
-    <h2>textos com tamanho diferentes</h2>
-    <p id="texto"></p>
+    <hr>
 
+    <!-- 3. Imprimir os números de 1 a 5 com tamanhos de texto diferentes -->
+    <h3>3. Números de 1 a 5 com tamanhos diferentes</h3>
+    <p id="texto"></p>
     <script>
-        const texto = document.getElementById('texto')
-        for(i=1; i<=5; i++){
-            texto.innerHTML += `<span style='font-size:${i}rem'>${i}</span>`
+        const blocoTexto = document.getElementById('texto');
+        for(let i = 1; i <= 5; i++){
+            blocoTexto.innerHTML += `<span style='font-size:${i}rem; margin-right: 10px;'>${i}</span>`;
         }
     </script>
 
-    <!-- 4. Fazer um formulário pedindo um nome e ao clicar no botão mostrar esse nome impresso 5 vezes, onde cada vez terá um tamanho de 1rem até 5rem-->
+    <hr>
 
+    <!-- 4. Fazer um formulário pedindo um nome e ao clicar no botão mostrar esse nome impresso 5 vezes, onde cada vez terá um tamanho de 1rem até 5rem -->
+    <h3>4. Nome aumentando de 1rem a 5rem</h3>
     <label>
         Nick: <input type="text" id="nick">
         <button id="clicar">CLICAR</button>
-        <p id="texto_aumentando"></p>
+        <div id="texto_aumentando"></div>
     </label>
     <script>
-        
-        let botao = document.getElementById('clicar')
-        let inputnick = document.getElementById('nick')
-        let resultado = document.getElementById('texto_aumentando')
+        let botao = document.getElementById('clicar');
+        let inputnick = document.getElementById('nick');
+        let resultadoNick = document.getElementById('texto_aumentando');
 
         botao.addEventListener('click', function(){
-            const nick = inputnick.value
-            resultado.innerHTML = ''
+            const nick = inputnick.value;
+            resultadoNick.innerHTML = '';
 
-            for(i=1; i<=5; i++){
-                resultado.innerHTML += `<span style='font-size:${i}rem'>${nick}</span>`
+            for(let i = 1; i <= 5; i++){
+                resultadoNick.innerHTML += `<p style='font-size:${i}rem; margin: 4px 0;'>${nick}</p>`;
             }
-        })
+        });
     </script>
 
-    <!-- 5. Botão de aumentar fonte do texto do body para 2rem e diminuir a fonte do texto para 0.5rem -->
+    <hr>
 
+    <!-- 5. Botão de aumentar fonte do texto do body para 2rem e diminuir a fonte do texto para 0.5rem -->
+    <h3>5. Ajustar fonte do Body</h3>
     <label>Nome:</label>
     <input type="text" id="nickname" placeholder="Digite seu nome">
     <h2 id="mensagem"></h2>
 
-    <!-- 2. Contador -->
-    <button id="decrementar">-</button>
-    <span id="resultado">0</span>
-    <button id="incrementar">+</button>
+    <!-- Contador -->
+    <div>
+        <button id="decrementar">-</button>
+        <span id="resultado">0</span>
+        <button id="incrementar">+</button>
+    </div>
 
+    <br>
     <button id="aumentarFonte">Aumentar Fonte</button>
     <button id="diminuirFonte">Diminuir Fonte</button>
 
     <script>
-
         const inputNome = document.getElementById('nickname');
         const mensagem = document.getElementById('mensagem');
 
@@ -105,14 +108,14 @@
 
         const incrementar = document.getElementById('incrementar');
         const decrementar = document.getElementById('decrementar');
-        const metodos = document.getElementById('metodos');
+        const spanResultado = document.getElementById('resultado');
 
         incrementar.addEventListener('click', function() {
-            resultado.textContent = parseInt(resultado.textContent) + 1;
+            spanResultado.textContent = parseInt(spanResultado.textContent) + 1;
         });
 
         decrementar.addEventListener('click', function() {
-            resultado.textContent = parseInt(resultado.textContent) - 1;
+            spanResultado.textContent = parseInt(spanResultado.textContent) - 1;
         });
 
         const aumentarFonte = document.getElementById('aumentarFonte');
@@ -128,5 +131,3 @@
     </script>
 </body>
 </html>
-
-
