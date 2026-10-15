@@ -83,40 +83,11 @@
 
     <!-- 5. Botão de aumentar fonte do texto do body para 2rem e diminuir a fonte do texto para 0.5rem -->
     <h3>5. Ajustar fonte do Body</h3>
-    <label>Nome:</label>
-    <input type="text" id="nickname" placeholder="Digite seu nome">
-    <h2 id="mensagem"></h2>
 
-    <!-- Contador -->
-    <div>
-        <button id="decrementar">-</button>
-        <span id="resultado">0</span>
-        <button id="incrementar">+</button>
-    </div>
-
-    <br>
     <button id="aumentarFonte">Aumentar Fonte</button>
     <button id="diminuirFonte">Diminuir Fonte</button>
 
     <script>
-        const inputNome = document.getElementById('nickname');
-        const mensagem = document.getElementById('mensagem');
-
-        inputNome.addEventListener('input', function() {
-            mensagem.textContent = `Olá, ${inputNome.value}!`;
-        });
-
-        const incrementar = document.getElementById('incrementar');
-        const decrementar = document.getElementById('decrementar');
-        const spanResultado = document.getElementById('resultado');
-
-        incrementar.addEventListener('click', function() {
-            spanResultado.textContent = parseInt(spanResultado.textContent) + 1;
-        });
-
-        decrementar.addEventListener('click', function() {
-            spanResultado.textContent = parseInt(spanResultado.textContent) - 1;
-        });
 
         const aumentarFonte = document.getElementById('aumentarFonte');
         const diminuirFonte = document.getElementById('diminuirFonte');
