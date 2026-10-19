@@ -5,6 +5,7 @@
             <ol>
                 <li><router-link to="/carros">Carros</router-link></li>
                 <li><router-link to="/contato">Contato</router-link></li>
+                <li><router-link to="/noticias">Noticias</router-link></li>
             </ol>
         </nav>
     </header>
