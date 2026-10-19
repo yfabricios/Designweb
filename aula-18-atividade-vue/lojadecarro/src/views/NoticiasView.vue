@@ -1,12 +1,9 @@
 <template>
-    <div>
-        <ul>
-            <div class="noticias">
-                <li v-for="item in noticias" :key="item.id">
-                    {{ item.titulo }} - {{ item.texto }}
-                </li>
-            </div>
-        </ul>
+    <div class="noticias-container">
+        <div v-for="item in noticias" :key="item.id" class="noticias-card">
+            <h3 class="noticia-titulo">{{ item.titulo }}</h3>
+            <p class="noticia-texto">{{ item.texto }}</p>
+        </div>
     </div>
 </template>
 <script setup>
