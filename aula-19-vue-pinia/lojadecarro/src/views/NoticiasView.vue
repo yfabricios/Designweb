@@ -15,4 +15,3 @@ const noticiasStore = useNoticiasStore()
 
   </article>
 </template>
-
